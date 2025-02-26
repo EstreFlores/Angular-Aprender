@@ -8,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class PeliculaComponent {
 
+  ngOnInit(){
+    console.log("El componente de pelicula esta arrancando!!!");
+  }
+
+  ngOnDestroy(){
+    console.log("El componente de pelicula ha sido eliminadooo!!");
+  }
+
+
 }

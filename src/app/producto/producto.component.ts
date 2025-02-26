@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { PeliculaComponent } from '../pelicula/pelicula.component';
-import { UsuarioComponent } from '../usuario/usuario.component';
-import { VentasComponent } from '../ventas/ventas.component';
 
 @Component({
   
     selector: "mi-producto",
-    imports:[PeliculaComponent,UsuarioComponent,VentasComponent],
+    imports:[PeliculaComponent],
     templateUrl: "producto.component.html",
     styleUrl: "producto.component.css"
 
@@ -19,6 +17,10 @@ export class ProductoComponent {
     public precio: number;
     public descripcion: string;
 
+
+    public mostrar_peliculas:boolean = true;
+
+
     constructor(){
 
         this.nombre = "PC PORTATIL";
@@ -28,6 +30,31 @@ export class ProductoComponent {
 
         console.log("Se ha cargado el componente de mi de productos")
         
+    }
+
+
+    ngOnInit(){
+        console.log("Vale, el componente esta inicializado!!")
+    }
+
+
+    ngAfterViewInit(){
+        console.log("La vista esta cargada!!!!!")
+    }
+
+
+    ngDoCheck(){
+        console.log("Los cambios en el componente han sido detectados")
+    }
+
+
+    cambiarNombre(){
+        this.nombre = "PC ELEGANTE";
+    }
+
+
+    ocultarPeliculas (valor:boolean){
+        this.mostrar_peliculas = valor;
     }
 
 }
